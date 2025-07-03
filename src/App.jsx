@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/NavBar';
 import Home from './pages/Home';
 import Products from './pages/Products';
-import ProductDetails from './pages/ProductDetails'; // ✅ New import
+import ProductDetails from './pages/ProductDetails';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -24,16 +24,16 @@ function App() {
   }, [darkMode]);
 
   return (
-    <Router>
+    <BrowserRouter basename="/SelfCare"> {/* ✅ basename added */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
-        <Route path="/products/:id" element={<ProductDetails />} /> {/* ✅ Added */}
+        <Route path="/products/:id" element={<ProductDetails />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 

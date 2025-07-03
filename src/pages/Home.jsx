@@ -1,4 +1,5 @@
 import '../styles/Home.css';
+import { Link } from 'react-router-dom';
 import SelfCare from "../assets/SelfCare.png";
 import naturalShampoo from '../assets/naturalShampoo.jpg';
 import skinCleanser from '../assets/skinCleanser.jpg';
@@ -45,9 +46,9 @@ const Home = () => {
           <p className="hero-description">
             ჩვენ გთავაზობთ იტალიის პრემიუმ ბრენდების თვითზრუნვის პროდუქციას — დამზადებული ნატურალური ინგრედიენტებით, უმაღლესი ხარისხით და სიყვარულით. ახლა უკვე საქართველოში, ხელმისაწვდომ ფასებში!
           </p>
-          <a href="/Products" className="cta-button" aria-label="გაეცანით პროდუქციას">
+          <Link to="/products" className="cta-button" aria-label="გაეცანით პროდუქციას">
             გაეცანით პროდუქციას
-          </a>
+          </Link>
         </div>
         <div className="hero-image">
           <img src={SelfCare} alt="თვითზრუნვის პროდუქცია" />
@@ -87,9 +88,9 @@ const Home = () => {
               <img src={product.image} alt={product.name} className="product-image" />
               <h3 className="product-name">{product.name}</h3>
               <p className="product-price">{product.price} ₾</p>
-              <a href="/Products" className="view-button" aria-label={`იხილეთ პროდუქტი: ${product.name}`}>
+              <Link to="/products" className="view-button" aria-label={`იხილეთ პროდუქტი: ${product.name}`}>
                 იხილეთ
-              </a>
+              </Link>
             </article>
           ))}
         </div>

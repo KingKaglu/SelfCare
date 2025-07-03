@@ -1,0 +1,66 @@
+:root {
+  --bg-color: #f9f9fb;
+  --card-bg: #ffffff;
+  --text-color: #1e1e1e;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #ffffff;
+  --border-color: #2a2a2a;
+  --shadow-color: rgba(255, 255, 255, 0.05);
+}
+
+.products-page {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+.products-grid {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.product-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  padding: 1rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.empty-state {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  text-align: center;
+  padding: 2rem;
+  grid-column: 1 / -1;
+  background: var(--card-bg);
+  border-radius: 1rem;
+  border: 1px dashed var(--border-color);
+}
+
+@media (max-width: 768px) {
+  .products-page {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
